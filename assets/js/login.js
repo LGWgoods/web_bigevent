@@ -57,10 +57,9 @@ $(function () {
                 }
                 layer.msg(res.message)
                 // 注册成功后跳转登录界面
-                console.log(res.token)
+                localStorage.setItem('token', res.token)
                 location.href = "/big-event/index.html"
             }
         })
     })
-    console.log($('.reg-box[name=password]')[0])
 })
