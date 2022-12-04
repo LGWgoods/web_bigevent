@@ -29,16 +29,6 @@ function getUserInfo() {
             }
             renderAvatar(res.data)
         },
-        // //无论成功失败都会调用complete函数
-        // complete: function (resb) {
-        //     console.log(resb)
-        //     if ((resb.responseJSON.status == 1) && (resb.responseJSON.message == '身份认证失败！')) {
-        //         //强制清空token
-        //         localStorage.removeItem('token')
-        //         //强制跳转到登录页
-        //         location.href = "/big-event/login.html"
-        //     }
-        // }
     });
 }
 function renderAvatar(data) {
@@ -51,7 +41,7 @@ function renderAvatar(data) {
         $('.text-avatar').hide()
     }
     else {
-        $('.text-avatar').text((data.username).slice(0, 1).toUpperCase()).show()
+        $('.text-avatar').text((name[0]).toUpperCase()).show()
         $('.layui-nav-img').hide()
     }
 }
